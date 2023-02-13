@@ -25,6 +25,7 @@ jobs:
                   pyinstaller ./hello.spec
                   mkdir test
                   cp ./dist/hello.exe ./test/hello.exe
+                  zip -r ./test/hello.zip ./dist/hello.exe
 
             - name: Read version
               id: version
@@ -61,6 +62,6 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                 upload_url: ${{ steps.create-new-release.outputs.upload_url}}
-                asset_path: ./test/hello.exe
-                asset_name: hello.exe
+                asset_path: ./test/hello.zip
+                asset_name: hello.zip
                 asset_content_type: application/zip
