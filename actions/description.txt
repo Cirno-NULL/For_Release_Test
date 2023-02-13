@@ -1,2 +1,1 @@
-看看secrets.GITHUB_TOKEN到底是放哪里的
-第二弹
+尝试用tag作为触发
