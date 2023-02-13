@@ -21,7 +21,7 @@ jobs:
               run: |
                   pyinstaller ./hello.spec
                   mkdir test
-                  cp ./dist/main.exe ./test/hello.exe
+                  cp ./dist/hello.exe ./test/hello.exe
             - name: Packing
               uses: actions/upload-artifact@v3
               with:
