@@ -19,7 +19,7 @@ jobs:
                   python -m pip install -r ./requirements_win.txt
             - name: Run packing
               run: |
-                  pyinstaller ./main.spec
+                  pyinstaller ./hello.spec
                   mkdir test
                   cp ./dist/main.exe ./test/hello.exe
             - name: Packing
