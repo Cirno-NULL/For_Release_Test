@@ -39,11 +39,13 @@ jobs:
         with:
           path: ./actions/description.txt
 
-      - name: Packing
-        uses: actions/upload-artifact@v3
+      - name: Packing zip
+        uses: thedoctor0/zip-release@0.7.1
         with:
-          name: helloworld
-          path: ./test
+          type: "zip"
+          filename: "release.zip"
+          path: ./dist
+          directory: ./test
 
       - name: Create GitHub Release
         id: create-new-release
@@ -54,14 +56,6 @@ jobs:
           tag_name: v${{steps.version.outputs.value}}
           release_name: hello v${{steps.version.outputs.value}}
           body: ${{steps.description.outputs.content}}
-
-      - name: Packing zip
-        uses: thedoctor0/zip-release@0.7.1
-        with:
-          type: "zip"
-          filename: "release.zip"
-          path: "./dist/*"
-          directory: "./test"
 
       - name: Upload asset to GitHub Release
         uses: actions/upload-release-asset@latest
