@@ -41,7 +41,7 @@ jobs:
 
       - name: Packing zip
         run: |
-          7z a -tzip ./test/ ./test/release.zip
+          7z a -tzip ./test/ ./test/
 
       - name: Create GitHub Release
         id: create-new-release
