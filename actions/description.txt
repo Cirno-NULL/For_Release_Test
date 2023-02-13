@@ -1,1 +1,1 @@
-试试看打成压缩包
+看看secrets.GITHUB_TOKEN到底是放哪里的
