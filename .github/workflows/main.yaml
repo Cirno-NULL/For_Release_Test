@@ -60,7 +60,7 @@ jobs:
         with:
           type: "zip"
           filename: "release.zip"
-          path: "./dict/*"
+          path: "./dist/*"
           directory: "./test"
 
       - name: Upload asset to GitHub Release
