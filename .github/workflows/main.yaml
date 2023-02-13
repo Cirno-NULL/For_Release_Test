@@ -40,12 +40,8 @@ jobs:
           path: ./actions/description.txt
 
       - name: Packing zip
-        uses: thedoctor0/zip-release@0.7.1
-        with:
-          type: "zip"
-          filename: "release.zip"
-          path: ./test/*
-          directory: ./test
+        run: |
+          7z a -tzip a ./test/release.zip ./test/
 
       - name: Create GitHub Release
         id: create-new-release
